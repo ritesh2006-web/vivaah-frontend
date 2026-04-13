@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import hero1 from "../assets/hero/hero1.jpg";
 import hero2 from "../assets/hero/hero2.jpg";
 import hero3 from "../assets/hero/hero3.jpg";
 import hero4 from "../assets/hero/hero4.jpg";
 import hero5 from "../assets/hero/hero5.jpg";
-import { useNavigate } from "react-router-dom";
 
 import aboutImg from "../assets/about/about1.jpg";
 
@@ -350,13 +350,13 @@ useEffect(() => {
               </div>
             ) : (
               <>
-                <a href="/login" className={`text-sm font-semibold px-4 py-2 rounded-full transition-all duration-150
+                <Link to="/login" className={`text-sm font-semibold px-4 py-2 rounded-full transition-all duration-150
                   ${scrolled ? "text-stone-700 hover:text-rose-500" : "text-white/90 hover:text-white"}`}>
                   Login
-                </a>
-                <a href="/register" className="text-sm font-semibold px-5 py-2 rounded-full bg-rose-500 text-white hover:bg-rose-600 transition-all duration-150 shadow-sm">
+                </Link>
+                <Link to="/register" className="text-sm font-semibold px-5 py-2 rounded-full bg-rose-500 text-white hover:bg-rose-600 transition-all duration-150 shadow-sm">
                   Register
-                </a>
+                </Link>
               </>
             )}
           </div>
@@ -397,8 +397,8 @@ useEffect(() => {
                 </>
               ) : (
                 <>
-                  <a href="/login" className="flex-1 text-center text-sm font-semibold py-2.5 rounded-xl border border-stone-200 text-stone-700 hover:bg-stone-50">Login</a>
-                  <a href="/register" className="flex-1 text-center text-sm font-semibold py-2.5 rounded-xl bg-rose-500 text-white hover:bg-rose-600">Register</a>
+                  <Link to="/login" className="flex-1 text-center text-sm font-semibold py-2.5 rounded-xl border border-stone-200 text-stone-700 hover:bg-stone-50">Login</Link>
+                  <Link to="/register" className="flex-1 text-center text-sm font-semibold py-2.5 rounded-xl bg-rose-500 text-white hover:bg-rose-600">Register</Link>
                 </>
               )}
             </div>
@@ -835,9 +835,9 @@ useEffect(() => {
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-stone-300 mb-4">Account</p>
               <div className="space-y-2">
-                <a href="/login" className="block text-xs text-stone-500 hover:text-rose-400 transition-colors">Login</a>
-                <a href="/register" className="block text-xs text-stone-500 hover:text-rose-400 transition-colors">Register</a>
-                <a href="/dashboard" className="block text-xs text-stone-500 hover:text-rose-400 transition-colors">Dashboard</a>
+                <Link to="/login" className="block text-xs text-stone-500 hover:text-rose-400 transition-colors">Login</Link>
+                <Link to="/register" className="block text-xs text-stone-500 hover:text-rose-400 transition-colors">Register</Link>
+                <Link to="/dashboard" className="block text-xs text-stone-500 hover:text-rose-400 transition-colors">Dashboard</Link>
               </div>
             </div>
           </div>

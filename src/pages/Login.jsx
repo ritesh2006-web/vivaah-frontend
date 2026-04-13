@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -192,19 +193,19 @@ export default function LoginPage({ setToken, setUser }) {
           {/* Register link */}
           <p className="text-center text-sm text-stone-500">
             Don't have an account?{" "}
-            <a href="/register" className="text-rose-500 font-semibold hover:text-rose-600 transition-colors underline underline-offset-2">
+            <Link to="/register" className="text-rose-500 font-semibold hover:text-rose-600 transition-colors underline underline-offset-2">
               Create one free
-            </a>
+            </Link>
           </p>
 
           {/* Back to home */}
           <div className="text-center mt-8">
-            <a href="/" className="inline-flex items-center gap-1.5 text-xs text-stone-400 hover:text-stone-600 transition-colors">
+            <Link to="/" className="inline-flex items-center gap-1.5 text-xs text-stone-400 hover:text-stone-600 transition-colors">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M19 12H5M12 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               Back to Vivaah Home
-            </a>
+            </Link>
           </div>
         </div>
       </div>

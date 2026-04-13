@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import RegisterImage from "../assets/register/register.jpg";
 
@@ -157,9 +158,9 @@ export default function Register() {
           {/* LOGIN LINK */}
           <p className="text-center text-sm text-stone-500 mt-6">
             Already have an account?{" "}
-            <a href="/login" className="text-rose-500 font-semibold underline">
+            <Link to="/login" className="text-rose-500 font-semibold underline">
               Sign in
-            </a>
+            </Link>
           </p>
 
         </div>
