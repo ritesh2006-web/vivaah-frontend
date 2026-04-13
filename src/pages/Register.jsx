@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import RegisterImage from "../assets/register/register.jpg";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Register() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -24,7 +25,7 @@ export default function Register() {
 
       setMessage("Registration successful! Redirecting to login...");
       setTimeout(() => {
-        window.location.href = "/login";
+        navigate("/login");
       }, 2000);
     } catch (error) {
       setMessage(error.response?.data?.error || "Registration failed. Please try again.");

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -7,7 +7,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 import Login from "../assets/login/login.jpg";
 
 export default function LoginPage({ setToken, setUser }) {
-  const [form, setForm] = useState({ email: "", password: "" }); // Removed name, as backend login uses email/password
+  const navigate = useNavigate();
+  const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -31,7 +32,7 @@ export default function LoginPage({ setToken, setUser }) {
       setUser(userData);
 
       // Redirect to dashboard
-      window.location.href = "/dashboard";
+      navigate("/dashboard");
     } catch (error) {
       setMessage(error.response?.data?.error || "Login failed. Please try again.");
     } finally {
